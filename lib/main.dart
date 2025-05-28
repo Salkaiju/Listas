@@ -10,25 +10,34 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Lista com ListView',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Container Estilizado'),
+          title: const Text('Minha Lista'),
         ),
-        body: Center(
-          child: Container(
-            padding: const EdgeInsets.all(16), // Espaçamento interno
-            decoration: BoxDecoration(
-              color: Colors.lightBlueAccent, // Fundo azul claro
-              borderRadius: BorderRadius.circular(12), // Bordas arredondadas
+        body: ListView(
+          children: const [
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Início'),
             ),
-            child: const Text(
-              'Este é um container estilizado',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white, // Cor do texto
-              ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Perfil'),
             ),
-          ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Configurações'),
+            ),
+            ListTile(
+              leading: Icon(Icons.message),
+              title: Text('Mensagens'),
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Sair'),
+            ),
+          ],
         ),
       ),
     );
